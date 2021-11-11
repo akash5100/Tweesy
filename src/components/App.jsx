@@ -1,11 +1,9 @@
 import React from "react";
+import { BrowserRouter as Router, Link, Route, Routes } from "react-router-dom";
+import Register from "../pages/register";
+import About from "../pages/about";
+import Explore from "../pages/explore";
 
-function App() {
-  return (
-    <div>
-      <h1>yo hello!</h1>
-    </div>
-  );
-}
+const App = () => <div>workling</div>;
 
 export default App;

@@ -1,3 +1,5 @@
-h1 {
-  color: red;
+div {
+  height: 100%;
+  background-color: tomato;
+  color: black;
 }
