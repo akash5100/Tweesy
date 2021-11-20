@@ -7,11 +7,11 @@ import postRouter from "./routes/posts.js";
 
 const app = express();
 
-app.use("/posts", postRouter);
-
 app.use(bodyParser.json({ extended: true }));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
+
+app.use("/posts", postRouter);
 
 //temp gonna store this in virtual env later
 const CONNECTION_URL =
