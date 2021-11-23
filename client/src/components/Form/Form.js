@@ -11,7 +11,7 @@ const Form = () => {
     title: "",
     message: "",
     creator: "",
-    tags: "",
+    tag: "",
     selectedFile: "",
   });
   const classes = useStyles();
@@ -63,12 +63,12 @@ const Form = () => {
           }
         />
         <TextField
-          name="tags"
+          name="tag"
           variant="outlined"
           label="Tags"
           fullWidth
-          value={postData.tags}
-          onChange={(e) => setPostData({ ...postData, tags: e.target.value })}
+          value={postData.tag}
+          onChange={(e) => setPostData({ ...postData, tag: e.target.value })}
         />
 
         <div className={classes.fileInput}>
