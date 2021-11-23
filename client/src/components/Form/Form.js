@@ -32,9 +32,19 @@ const Form = ({ currentId, setCurrentId }) => {
     } else {
       dispatch(createPost(postData));
     }
+    clear();
   };
 
-  const clear = () => {};
+  const clear = () => {
+    setCurrentId(null);
+    setPostData({
+      title: "",
+      message: "",
+      creator: "",
+      tag: "",
+      selectedFile: "",
+    });
+  };
 
   return (
     <Paper className={classes.paper}>
