@@ -16,7 +16,7 @@ import { likePost, deletePost } from "../../../actions/posts";
 import useStyles from "./styles";
 import Posts from "../Posts";
 
-const Post = ({ post }) => {
+const Post = ({ post, setCurrentId }) => {
   const classes = useStyles();
   return (
     <Card className={classes.card}>
@@ -32,7 +32,14 @@ const Post = ({ post }) => {
         </Typography>
       </div>
       <div className={classes.overlay2}>
-        <Button style={{ color: "white" }} size="small" onClick={() => {}}>
+        <Button
+          style={{ color: "white" }}
+          size="small"
+          onClick={() => {
+            console.log("hello");
+          }}
+        >
+          {/* setCurrentId(post._id) */}
           <MoreHorizIcon fontSize="default" />
         </Button>
       </div>
@@ -48,9 +55,13 @@ const Post = ({ post }) => {
           gutterBottom
           color="textSecondary"
         >
+          {post.title}
+        </Typography>
+        <Typography variant="h5" gutterBottom color="textSecondary">
           {post.message}
         </Typography>
       </CardContent>
+
       <CardActions className={classes.cardActions}>
         <Button size="small" color="primary" onClick={() => {}}>
           <ThumbUpAltIcon fontSize="small" />
