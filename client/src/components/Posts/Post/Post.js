@@ -36,10 +36,9 @@ const Post = ({ post, setCurrentId }) => {
           style={{ color: "white" }}
           size="small"
           onClick={() => {
-            console.log("hello");
+            setCurrentId(post._id);
           }}
         >
-          {/* setCurrentId(post._id) */}
           <MoreHorizIcon fontSize="default" />
         </Button>
       </div>

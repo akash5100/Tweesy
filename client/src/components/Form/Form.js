@@ -102,7 +102,6 @@ const Form = ({ currentId, setCurrentId }) => {
           >
             Submit
           </Button>
-          <br />
           <Button
             variant="contained"
             color="secondary"
