@@ -48,9 +48,9 @@ export const deletePost = async (req, res) => {
   res.json({ message: "Wiped Out!" });
 };
 export const likePost = async (req, res) => {
-  const { id: _id } = req.params;
+  const { id: id } = req.params;
 
-  if (!mongoose.Types.ObjectId.isValid(_id))
+  if (!mongoose.Types.ObjectId.isValid(id))
     return res.status(404).send("No post with that id");
   const post = await PostMessage.findById(id);
   const updatedPost = await PostMessage.findByIdAndUpdate(

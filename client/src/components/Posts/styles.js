@@ -11,4 +11,7 @@ export default makeStyles((theme) => ({
   actionDiv: {
     textAlign: "center",
   },
+  progressBar: {
+    color: "white",
+  },
 }));
