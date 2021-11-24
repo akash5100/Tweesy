@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { Container, AppBar, Typography, Grow, Grid } from "@material-ui/core";
 import { useDispatch } from "react-redux";
 
-import memories from "./images/memories.png";
 import { getPosts } from "./actions/posts";
 import Posts from "./components/Posts/Posts";
 import Form from "./components/Form/Form";
@@ -24,12 +23,6 @@ const App = () => {
         <Typography className={classes.heading} variant="h2" align="center">
           Tweesy
         </Typography>
-        <img
-          src={memories}
-          className={classes.image}
-          alt="memories"
-          height="60"
-        />
       </AppBar>
       <Grow in>
         <Container>
