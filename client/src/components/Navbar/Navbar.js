@@ -10,7 +10,13 @@ const Navbar = () => {
   return (
     <AppBar className={classes.appBar} position="static" color="inherit">
       <div>
-        <Typography className={classes.heading} variant="h2" align="center">
+        <Typography
+          className={classes.heading}
+          variant="h2"
+          align="center"
+          component={Link}
+          to="/"
+        >
           Tweesy
         </Typography>
       </div>
@@ -36,7 +42,7 @@ const Navbar = () => {
           </div>
         ) : (
           <Button
-            // component={Link}
+            component={Link}
             to="/auth"
             variant="contained"
             color="primary"
