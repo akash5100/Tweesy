@@ -9,21 +9,41 @@ import {
 } from "@material-ui/core";
 import { GoogleLogin } from "react-google-login";
 import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
-
+import { useNavigate } from "react-router";
 import Icon from "./Icon";
 import useStyles from "./styles";
 import Input from "./Input";
+import { signin, signup } from "../../actions/auth";
+//
 
+const initialState = {
+  firstName: "",
+  lastName: "",
+  email: "",
+  Password: "",
+  confirmPassword: "",
+};
+
+//
 const Auth = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [isSignup, setSignUp] = useState(false);
   const classes = useStyles();
   const dispatch = useDispatch();
   const history = useNavigate();
+  const [formData, setFormData] = useState(initialState);
 
-  const handleSubmit = () => {};
-  const handleChange = () => {};
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (isSignup) {
+      dispatch(signup(formData, history));
+    } else {
+      dispatch(signin(formData, history));
+    }
+  };
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
 
   const handleShowPassword = () =>
     setShowPassword((previousState) => !previousState);
@@ -38,7 +58,7 @@ const Auth = () => {
     const token = res?.tokenId;
     try {
       dispatch({ type: "AUTH", data: { result, token } });
-      history.push("/");
+      // history.push("/");
     } catch (error) {
       console.log(error);
     }
@@ -97,6 +117,7 @@ const Auth = () => {
           </Grid>
           <Button
             type="submit"
+            onSubmit={handleSubmit}
             fullWidth
             variant="contained"
             color="primary"
