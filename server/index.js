@@ -14,7 +14,7 @@ app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
 app.use(cors({ origin: "*" }));
 
 app.use("/posts", postRouter);
-app.use("/user", userRoutes);
+app.use("/user", userRouter);
 const port = process.env.PORT || 5000;
 
 // these are not required but rather have it else it will show error in console

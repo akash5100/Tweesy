@@ -50,7 +50,7 @@ const Auth = () => {
 
   const switchMode = () => {
     setSignUp((previousState) => !previousState);
-    handleShowPassword(false);
+    setShowPassword(false);
   };
 
   const googleSuccess = async (res) => {

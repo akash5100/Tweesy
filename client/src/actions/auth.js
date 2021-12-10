@@ -4,6 +4,8 @@ import { AUTH } from "../constant/actionConstant";
 
 export const signin = (formData, history) => async (dispatch) => {
   try {
+    const { data } = await api.signIn(FormData);
+
     history.push("/");
   } catch (error) {
     console.log(error);
