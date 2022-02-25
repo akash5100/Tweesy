@@ -15,3 +15,5 @@ A web app to pour out your thoughts.
 - on the second terminal window
 - cd to the client side and ruin `npm start`
 - After starting both the server side and the client side, you can open `localhost:3000`
+
+<!--  -->
